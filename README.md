@@ -1,1 +1,1 @@
-"# trade_plat" 
+# Early Bird Equity

@@ -1,7 +1,18 @@
 import React from "react";
 import { ArrowRight, BarChart2, Shield, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-const LandingPage = () => {
+const Landing = () => {
+  const navigate = useNavigate();
+
+  const sendToLogin = () => {
+    navigate("login"); // Navigate to the landing page
+  };
+
+  const sendToRegister = () => {
+    navigate("register"); // Navigate to the landing page
+  };
+
   // Features data for the platform
   const features = [
     {
@@ -36,13 +47,7 @@ const LandingPage = () => {
               </span>
             </div>
             <div className="hidden md:block">
-              <div className="ml-10 flex items-center space-x-4">
-                <a
-                  href="#features"
-                  className="text-gray-700 hover:text-blue-600 px-3 py-2"
-                >
-                  Features
-                </a>
+              <div className="ml-4 flex items-center space-x-4">
                 <a
                   href="#about"
                   className="text-gray-700 hover:text-blue-600 px-3 py-2"
@@ -58,10 +63,16 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="text-gray-700 hover:text-blue-600 px-3 py-2">
+              <button
+                className="text-gray-700 hover:text-blue-600 px-3 py-2"
+                onClick={sendToLogin}
+              >
                 Login
               </button>
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+              <button
+                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                onClick={sendToRegister}
+              >
                 Register
               </button>
             </div>
@@ -86,7 +97,10 @@ const LandingPage = () => {
                 </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
                   <div className="rounded-md shadow">
-                    <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
+                    <button
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+                      onClick={sendToLogin}
+                    >
                       Get Started
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </button>
@@ -129,4 +143,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Landing;
